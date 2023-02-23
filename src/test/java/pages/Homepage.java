@@ -58,5 +58,11 @@ public class Homepage {
     @FindBy(xpath = "//input[@id=\"ap_password\"]")
     WebElement passwordBox;
 
+//    public WebElement getSearchResult() {
+//        return SearchResult;
+//    }
+//
+//    @FindBy(xpath = "label[@class=\"a-form-label\"]")
+//    WebElement SearchResult;
 
 }

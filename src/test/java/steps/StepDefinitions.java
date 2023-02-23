@@ -5,8 +5,10 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import pages.Homepage;
 import utils.BrowserManager;
 import utils.QaProps;
@@ -56,7 +58,7 @@ public class StepDefinitions{
     public void userIsInHomepage() {
         url = QaProps.getValue("url");
         driver.get(url);
-      //  data = TestDataReader.getData("Verify the user is able to enter valid Username and click next");
+        data = TestDataReader.getData("Verify the user is able to enter valid Username and click next");
     }
 
     @And("user click on signIn")
@@ -72,8 +74,13 @@ public class StepDefinitions{
     @When("user enter valid username and click next")
     public void userEnterValidUsernameAndClickNext() {
 
-        homepage.getUsername().sendKeys("7905897319");
+        homepage.getUsername().sendKeys(data.get("TypeValue"));
         homepage.getUsername().sendKeys(Keys.ENTER);
+//        String text = homepage.getSearchResult()
+//                .getText();
+//        Assert.assertEquals(text,"Password");
+
+
 
 
 
@@ -81,6 +88,8 @@ public class StepDefinitions{
 
     @Then("password page displayed")
     public void passwordPageDisplayed() {
+
         homepage.getPasswordBox().isDisplayed();
+
     }
 }

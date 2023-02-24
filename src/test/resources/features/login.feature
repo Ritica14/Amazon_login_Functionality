@@ -22,7 +22,7 @@ Feature: Check login feature
       When user enter Invalid username and click next
       Then Error message appear
 
-@smoke
+
 Scenario Outline: Login successfully
   When User type "<username>" in email
   And User type "<password>" in password

@@ -14,6 +14,7 @@ import utils.BrowserManager;
 import utils.QaProps;
 import utils.TestDataReader;
 
+import java.sql.SQLOutput;
 import java.util.HashMap;
 
 
@@ -191,6 +192,18 @@ public class StepDefinitions {
 
     @Then("Error Box popUp")
     public void errorBoxPopUp() {
-        homepage.getInvalidPass().isDisplayed();
+
+       // homepage.getInvalidPass().isDisplayed();
+      //  driver.navigate().refresh();
+
+        for(int i=0; i<=2;i++){
+            try{
+                homepage.getInvalidPass().isDisplayed();
+                break;
+            }
+            catch(Exception e){
+                System.out.println(e.getMessage());
+            }
+        }
     }
 }

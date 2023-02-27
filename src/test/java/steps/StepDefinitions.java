@@ -193,17 +193,17 @@ public class StepDefinitions {
     @Then("Error Box popUp")
     public void errorBoxPopUp() {
 
-       // homepage.getInvalidPass().isDisplayed();
+        homepage.getErrorBox().isDisplayed();
       //  driver.navigate().refresh();
 
-        for(int i=0; i<=2;i++){
-            try{
-                homepage.getInvalidPass().isDisplayed();
-                break;
-            }
-            catch(Exception e){
-                System.out.println(e.getMessage());
-            }
-        }
+//        for(int i=0; i<=2;i++){
+//            try{
+//                homepage.getInvalidPass().isDisplayed();
+//                break;
+//            }
+//            catch(Exception e){
+//                System.out.println(e.getMessage());
+//            }
+//        }
     }
 }
